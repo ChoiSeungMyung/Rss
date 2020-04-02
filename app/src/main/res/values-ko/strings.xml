@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyRealTrip</string>
+
+    <!--    App Description -->
+    <string name="splash_app_description_first">최신 뉴스를 제공합니다.</string>
+    <string name="splash_app_description_second">뉴스의 키워드를 알아보세요</string>
+    <string name="splash_app_description_third">뉴스를 클릭하면 원본 뉴스를\n볼 수 있습니다.</string>
+    <string name="splash_app_version">v1.0</string>
+
+    <!--   News Detail label -->
+    <string name="detail_keyword">키워드 :</string>
+
+    <!--   SnackBar Message -->
+    <string name="toast_check_connectivity">인터넷 연결 상태를 확인 해주세요</string>
+</resources>

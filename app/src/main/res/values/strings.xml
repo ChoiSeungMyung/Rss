@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MyRealTrip</string>
+
+    <!--    App Description -->
+    <string name="splash_app_description_first">Get the latest news.</string>
+    <string name="splash_app_description_second">Find out the keywords\nfor the news.</string>
+    <string name="splash_app_description_third">Click News to view\nthe original news.</string>
+    <string name="splash_app_version">v1.0</string>
+
+    <!--   News Detail label -->
+    <string name="detail_keyword">Keyword :</string>
+
+    <!--   SnackBar Message -->
+    <string name="toast_check_connectivity">Please check the Internet connection status</string>
+</resources>

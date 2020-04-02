@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="newsTitle"
+            type="String" />
+        <variable
+            name="newsKeyword0"
+            type="String" />
+        <variable
+            name="newsKeyword1"
+            type="String" />
+        <variable
+            name="newsKeyword2"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/news_detail_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{newsTitle}"
+            android:textSize="@dimen/font_18"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/news_detail_keyword_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detail_keyword"
+            android:layout_marginTop="@dimen/fix_4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/news_detail_title"/>
+        <TextView
+            android:id="@+id/news_detail_keyword0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{newsKeyword0}"
+            android:background="@drawable/bg_keyword"
+            app:layout_constraintEnd_toStartOf="@id/news_detail_keyword1"
+            app:layout_constraintStart_toEndOf="@id/news_detail_keyword_title"
+            app:layout_constraintTop_toBottomOf="@id/news_detail_title" />
+
+        <TextView
+            android:id="@+id/news_detail_keyword1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{newsKeyword1}"
+            android:background="@drawable/bg_keyword"
+            app:layout_constraintBottom_toBottomOf="@id/news_detail_keyword0"
+            app:layout_constraintEnd_toStartOf="@id/news_detail_keyword2"
+            app:layout_constraintStart_toEndOf="@id/news_detail_keyword0"
+            app:layout_constraintTop_toTopOf="@id/news_detail_keyword0" />
+
+        <TextView
+            android:id="@+id/news_detail_keyword2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{newsKeyword2}"
+            android:background="@drawable/bg_keyword"
+            app:layout_constraintBottom_toBottomOf="@id/news_detail_keyword0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/news_detail_keyword1"
+            app:layout_constraintTop_toTopOf="@id/news_detail_keyword0" />
+
+        <WebView
+            android:id="@+id/news_detail_web"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fix_0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/news_detail_keyword2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

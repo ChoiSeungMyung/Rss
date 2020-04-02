@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="news"
+            type="com.victoryzzi.android.apps.myrealtrip.model.News" />
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite100"
+        android:onClick="@{clickListener}">
+
+        <ImageView
+            android:id="@+id/item_news_thumb"
+            android:layout_width="@dimen/fix_128"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/item_news_title"
+            android:layout_width="@dimen/fix_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fix_8"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@{news.title}"
+            android:textSize="@dimen/font_18"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/item_news_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/item_news_thumb"
+            app:layout_constraintTop_toTopOf="@id/item_news_thumb" />
+
+        <TextView
+            android:id="@+id/item_news_description"
+            android:layout_width="@dimen/fix_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/fix_2"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@{news.description}"
+            android:textSize="@dimen/font_12"
+            app:layout_constraintBottom_toTopOf="@id/item_news_keyword0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/item_news_title"
+            app:layout_constraintTop_toBottomOf="@id/item_news_title" />
+
+        <TextView
+            android:id="@+id/item_news_keyword0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{news.keyWord[0].first}"
+            android:textSize="@dimen/font_8"
+            android:background="@drawable/bg_keyword"
+            android:layout_marginTop="@dimen/fix_2"
+            android:layout_marginBottom="@dimen/fix_4"
+            app:layout_constraintStart_toStartOf="@id/item_news_title"
+            app:layout_constraintTop_toBottomOf="@id/item_news_description"
+            app:layout_constraintBottom_toBottomOf="@id/item_news_decoline"
+            app:layout_constraintEnd_toStartOf="@id/item_news_keyword1"/>
+
+        <TextView
+            android:id="@+id/item_news_keyword1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{news.keyWord[1].first}"
+            android:background="@drawable/bg_keyword"
+            android:textSize="@dimen/font_8"
+            app:layout_constraintStart_toEndOf="@id/item_news_keyword0"
+            app:layout_constraintTop_toTopOf="@id/item_news_keyword0"
+            app:layout_constraintBottom_toBottomOf="@id/item_news_keyword0"
+            app:layout_constraintEnd_toStartOf="@id/item_news_keyword2"/>
+
+        <TextView
+            android:id="@+id/item_news_keyword2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{news.keyWord[2].first}"
+            android:background="@drawable/bg_keyword"
+            android:textSize="@dimen/font_8"
+            app:layout_constraintStart_toEndOf="@id/item_news_keyword1"
+            app:layout_constraintTop_toTopOf="@id/item_news_keyword0"
+            app:layout_constraintBottom_toBottomOf="@id/item_news_keyword0"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <View
+            android:id="@+id/item_news_decoline"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fix_1"
+            android:layout_marginTop="@dimen/fix_4"
+            android:background="@color/colorLightGray"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
